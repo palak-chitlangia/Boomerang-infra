@@ -1,0 +1,63 @@
+.cta-sec {
+    padding-block: 100px;
+    background: linear-gradient(105deg, #0A0A0B 0%, #1E1B4B 50%, #0A0A0B 100%);
+}
+
+.cta-sec::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("../../assets/images/cta-bg.png");
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.cta-sec .sub-head {
+    color: #6366F1;
+}
+
+.cta-sec h2 {
+    font-family: "Outfit", sans-serif;
+    letter-spacing: -1.5px;
+    line-height: 1em;
+    font-weight: 800;
+}
+
+.cta-sec h2 span {
+    background: linear-gradient(90deg, #FFF 0%, #94A3B8 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-sec h2 {
+    font-size: 62px;
+}
+
+@media (max-width: 991px) {
+    .cta-sec h2 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cta-sec {
+        padding-block: 70px;
+    }
+
+    .cta-sec h2 {
+        font-size: 35px;
+    }
+}
+
+.cta-sec .btn {
+    color: #0A0A0B !important;
+    padding: 14px 40px;
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+}

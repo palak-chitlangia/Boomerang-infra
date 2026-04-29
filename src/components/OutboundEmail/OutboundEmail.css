@@ -1,0 +1,19 @@
+.outbound-email-sec h3 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.644px;
+}
+
+.outbound-card {
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #E2E8F0;
+    background: #FFF;
+}
+.outbound-card h4 {
+    font-size: 17px;
+    font-weight: 600;
+}
+.outbound-card p {
+    width: 90%;
+}

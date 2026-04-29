@@ -1,0 +1,84 @@
+.subscriptions-sec {
+    padding-block: 70px;
+}
+
+.subscription-tabs-header {
+    padding: 6px;
+    border-radius: 16px;
+    background-color: #e2e8f080;
+    backdrop-filter: blur(6px);
+}
+
+.subscription-tabs-header button {
+    border-radius: 12px;
+    padding: 15px 28px;
+    font-size: 14px;
+    color: #0F172A;
+    opacity: 0.6;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+}
+
+.subscription-tabs-header button:hover {
+    opacity: 1;
+}
+
+.subscription-tabs-header button.active {
+    opacity: 1;
+    background: #FFF;
+    box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px rgba(0, 0, 0, 0.10);
+}
+
+.subscription-details {
+    padding: 48px;
+    border-radius: 40px;
+    border: 1px solid #F1F5F9;
+    box-shadow: 0 25px 50px -12px #00000040;
+    max-width: 900px;
+}
+
+.subscription-details h3 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.subscription-details p {
+    color: #64748B;
+}
+
+.subs-tag {
+    text-transform: uppercase;
+    background-color: #5a5dff1a;
+    color: var(--color-accent);
+    padding: 5px 12px;
+    border-radius: 20px;
+    letter-spacing: 1.2px;
+}
+
+.subscription-card {
+    padding: 22px 24px;
+    border-radius: 24px;
+}
+
+.tab-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.35s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width:767px) {
+    .subscription-details {
+        padding: 40px 25px;
+        border-radius: 20px;
+    }
+    .plan-include-col {
+        row-gap: 15px;
+    }
+}

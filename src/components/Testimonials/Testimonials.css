@@ -1,0 +1,100 @@
+.testimonial-sec {
+    padding-block: 120px;
+}
+
+.rev-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.rev-box {
+    aspect-ratio: 0.865;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.rev-overlay {
+    bottom: 0px;
+    left: 0px;
+    padding-inline: 20px;
+    padding-bottom: 10px;
+    background: linear-gradient(180deg, #00000000 0%, #00000099 100%);
+}
+
+.rev-video-box img,
+.rev-video-box video {
+    object-fit: cover;
+}
+
+.rev-logo-box {
+    padding-inline: 17%;
+}
+
+.text-rev-slider {
+    grid-column: span 2;
+    padding: 30px 35px 25px;
+}
+
+.rev-author-box img {
+    width: 48px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.rev-author-box p {
+    color: #808080;
+}
+
+.rev-pagination-cont {
+    right: 35px;
+    top: 30px;
+    z-index: 99;
+}
+
+.rev-pagination {
+    padding: 8px;
+    gap: 8px;
+    border-radius: 30px;
+}
+
+.rev-pagination-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #FFFFFF99;
+    transition: all 0.3s ease-in-out;
+}
+
+.rev-pagination-dot.active {
+    background-color: #FFFFFF;
+    width: 35px;
+}
+
+@media (max-width: 991px) {
+    .testimonial-sec {
+        padding-block: 90px;
+    }
+
+    .rev-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rev-box:first-child {
+        order: -2;
+    }
+
+    .rev-box:nth-child(3) {
+        order: -1;
+    }
+}
+
+@media (max-width: 767px) {
+    .testimonial-sec {
+        padding-block: 70px;
+    }
+
+    .rev-grid {
+        gap: 10px;
+    }
+}

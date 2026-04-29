@@ -1,0 +1,35 @@
+.hero-banner {
+    background: linear-gradient(90deg, #5220C1 0%, #401997 48.77%, #270F5B 100%);
+    padding-block: 20px;
+}
+
+.hero-banner:before {
+    content: "";
+    height: 100%;
+    width: 60%;
+    right: 0px;
+    top: 0px;
+    position: absolute;
+    background-image: url(../../assets/images/background-pattern.png);
+}
+
+.hero-banner img {
+    width: 90%;
+}
+
+@media (max-width: 991px) {
+    .hero-banner {
+        padding-top: 90px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-banner {
+        padding-top: 70px;
+    }
+
+    .hero-banner img {
+        width: 100%;
+        margin-top: 30px;
+    }
+}

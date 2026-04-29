@@ -1,0 +1,41 @@
+.schedule-call-sec {
+    padding-block: 120px;
+}
+
+.calender-box {
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid #F1F5F9;
+    box-shadow: 0 20px 25px -5px #e2e8f080, 0 8px 10px -6px #e2e8f080;
+}
+
+.call-rev-img {
+    width: 64px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.call-rev-box {
+    padding: 25px;
+    border-radius: 24px;
+    border: 1px solid #F1F5F9;
+    box-shadow: 0 1px 2px 0 #0000000d;
+}
+
+.people-rev-box {
+    padding: 16px;
+    border-radius: 16px;
+    background-color: #7c3aed0d;
+}
+
+@media (max-width:991px) {
+    .schedule-call-sec {
+        padding-block: 90px;
+    }
+}
+
+@media (max-width:767px) {
+    .schedule-call-sec {
+        padding-block: 70px;
+    }
+}

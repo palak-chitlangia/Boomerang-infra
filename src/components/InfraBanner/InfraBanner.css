@@ -1,0 +1,32 @@
+.infra-banner {
+    padding-top: 90px;
+}
+
+.infra-bg-left {
+    top: 0px;
+    left: 0;
+    width: 50%;
+    pointer-events: none;
+}
+
+.infra-bg-right {
+    top: 0;
+    right: 0;
+    width: 50%;
+    pointer-events: none;
+}
+.infra-ban-img {
+    box-shadow: 1px 1px 8.3px #0000001a;
+}
+
+@media (max-width:992px) {
+    .infra-banner {
+        padding-top: 80px;
+    }
+}
+
+@media (max-width:767px) {
+    .infra-banner {
+        padding-top: 70px;
+    }
+}
