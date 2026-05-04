@@ -1,6 +1,7 @@
 header {
     z-index: 99;
     padding-block: 48px;
+    border-bottom: 1px solid #E1E1E1;
 }
 
 header .inner-container {
@@ -11,8 +12,13 @@ header .inner-container {
 
 header .nav-link {
     font-weight: 600;
-    color: #4B4A4A;
     transition: all 0.3s ease;
+}
+
+header .nav-link:focus,
+header .nav-link:hover,
+header .nav-item.active .nav-link {
+    color: var(--color-black);
 }
 
 header .navbar {
@@ -47,7 +53,7 @@ header .navbar-toggler-icon {
 
 .sidebar-content {
     max-width: 300px;
-    padding: 30px;
+    padding: 30px 25px;
     transform: translateX(-100%);
     transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
     box-shadow: 0 25px 70px rgba(16, 51, 87, 0.16);
@@ -90,14 +96,6 @@ header .navbar-toggler-icon {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .sidebar,
-    .sidebar-backdrop,
-    .sidebar-content {
-        transition: none !important;
-    }
-}
-
 @media (max-width: 767px) {
     header {
         padding-block: 30px;
@@ -134,13 +132,14 @@ header .navbar-toggler-icon {
 
     header .navbar-nav .nav-link {
         display: block;
-        border-radius: 12px;
-        padding: 10px 14px;
+        padding-block: 5px;
+        margin-block: 3px;
     }
 
     header .navbar-nav .nav-link:hover,
     header .navbar-nav .active .nav-link {
-        background-color: #0198931a;
+        padding-left: 14px;
         color: var(--color-primary);
+        border-left: 3px solid var(--color-primary);
     }
 }

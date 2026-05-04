@@ -17,15 +17,15 @@ const Subscriptions = () => {
                         Perfect for teams of all sizes. Scale up or down as needed.
                     </p>
                 </div>
-                <div className="subs-tag fs-12 fw-bold">Flexible Scaling</div>
+                <div className="subs-tag fs-12 fw-bold text-primary">Flexible Scaling</div>
             </div>
 
             <div className="row g-3 mb-5">
                 <div className="col-md-4">
                     <div className="subscription-card bg-off h-100">
                         <p className="fs-14 mb-0 fw-medium">Google Workspace</p>
-                        <p className="fs-14 mb-0 fw-medium text-primary">
-                            $1.8/mailbox/month
+                        <p className="fs-14 mb-0 fw-medium text-accent">
+                            $2/mailbox/month
                         </p>
                     </div>
                 </div>
@@ -33,7 +33,7 @@ const Subscriptions = () => {
                 <div className="col-md-4">
                     <div className="subscription-card bg-off h-100">
                         <p className="fs-14 mb-0 fw-medium">Microsoft 365</p>
-                        <p className="fs-14 mb-0 fw-medium text-primary">
+                        <p className="fs-14 mb-0 fw-medium text-accent">
                             Coming soon
                         </p>
                     </div>
@@ -42,7 +42,7 @@ const Subscriptions = () => {
                 <div className="col-md-4">
                     <div className="subscription-card bg-off h-100">
                         <p className="fs-14 mb-0 fw-medium">Enterprise Azure</p>
-                        <p className="fs-14 mb-0 fw-medium text-primary">
+                        <p className="fs-14 mb-0 fw-medium text-accent">
                             Coming soon
                         </p>
                     </div>
@@ -64,14 +64,14 @@ const Subscriptions = () => {
                         Perfect for teams of all sizes. Scale up or down as needed.
                     </p>
                 </div>
-                <div className="subs-tag fs-12 fw-bold">Flexible Scaling</div>
+                <div className="subs-tag fs-12 fw-bold text-primary">Flexible Scaling</div>
             </div>
 
             <div className="row g-3 mb-5">
                 <div className="col-md-4">
                     <div className="subscription-card bg-off h-100">
                         <p className="fs-14 mb-0 fw-medium">Google Workspace</p>
-                        <p className="fs-14 mb-0 fw-medium text-primary">
+                        <p className="fs-14 mb-0 fw-medium text-accent">
                             Custom pricing
                         </p>
                     </div>
@@ -80,7 +80,7 @@ const Subscriptions = () => {
                 <div className="col-md-4">
                     <div className="subscription-card bg-off h-100">
                         <p className="fs-14 mb-0 fw-medium">Microsoft 365</p>
-                        <p className="fs-14 mb-0 fw-medium text-primary">
+                        <p className="fs-14 mb-0 fw-medium text-accent">
                             Coming soon
                         </p>
                     </div>
@@ -89,7 +89,7 @@ const Subscriptions = () => {
                 <div className="col-md-4">
                     <div className="subscription-card bg-off h-100">
                         <p className="fs-14 mb-0 fw-medium">Enterprise Azure</p>
-                        <p className="fs-14 mb-0 fw-medium text-primary">
+                        <p className="fs-14 mb-0 fw-medium text-accent">
                             Coming soon
                         </p>
                     </div>

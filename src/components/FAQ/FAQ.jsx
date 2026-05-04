@@ -1,145 +1,138 @@
 import "./FAQ.css"
-import { useMemo, useState } from "react";
+import { useMemo, useState, useRef, useEffect } from "react";
 import FaqArr from "../../assets/images/faq-arr.svg"
 import FaqActiveArr from "../../assets/images/faq-active-arr.svg"
 import FaqChevron from "../../assets/images/faq-chevron.svg"
-import BtnArr from "../../assets/images/btn-arr-pr.svg"
+import BtnArr from "../../assets/images/btn-arr-or.svg"
+
+const FAQItem = ({ question, answer, isOpen, onToggle }) => (
+    <div className={`faq-item ${isOpen ? "open" : ""}`}>
+        <button
+            type="button"
+            className="faq-head btn no-hover fs-18 fw-medium d-flex align-items-center justify-content-between gap-20 w-100"
+            onClick={onToggle}
+        >
+            <span>{question}</span>
+            <img className="faq-chevron flex-shrink-0" src={FaqChevron} alt="" />
+        </button>
+        <div className="faq-content fs-16">
+            <p>{answer}</p>
+        </div>
+    </div>
+);
 
 const FAQ = ({
     heading = "Frequently Asked Questions",
     tabbed = false,
-    items,
-    tabs,
+    items = [],
+    tabs = [],
     className = "",
     defaultActiveTabIndex = 0,
 }) => {
     const safeItems = useMemo(() => (Array.isArray(items) ? items : []), [items]);
     const safeTabs = useMemo(() => (Array.isArray(tabs) ? tabs : []), [tabs]);
 
-    const itemsByTabKey = useMemo(() => {
-        const map = new Map();
-        for (const it of safeItems) {
-            const key = it?.tabKey;
-            if (!key) continue;
-            if (!map.has(key)) map.set(key, []);
-            map.get(key).push(it);
-        }
-        return map;
-    }, [safeItems]);
-
     const [activeTabIndex, setActiveTabIndex] = useState(() => {
         const idx = Math.trunc(defaultActiveTabIndex);
         return Number.isFinite(idx) ? idx : 0;
     });
-    const [openIndexByTab, setOpenIndexByTab] = useState({});
-    const [openIndex, setOpenIndex] = useState(null);
 
-    const safeActiveTabIndex = tabbed
-        ? Math.min(Math.max(activeTabIndex, 0), Math.max(safeTabs.length - 1, 0))
-        : 0;
+    const [openedItems, setOpenedItems] = useState({}); // Stores { tabIndex: itemIndex }
+    const tabRefs = useRef([]);
 
-    const activeOpenIndex = tabbed ? openIndexByTab[safeActiveTabIndex] ?? null : openIndex;
+    const itemsByTabKey = useMemo(() => {
+        const map = new Map();
+        safeItems.forEach((it) => {
+            if (it?.tabKey) {
+                if (!map.has(it.tabKey)) map.set(it.tabKey, []);
+                map.get(it.tabKey).push(it);
+            }
+        });
+        return map;
+    }, [safeItems]);
 
-    const toggleOpen = (idx) => {
-        if (tabbed) {
-            setOpenIndexByTab((prev) => ({
-                ...prev,
-                [safeActiveTabIndex]: prev[safeActiveTabIndex] === idx ? null : idx,
-            }));
-            return;
-        }
-        setOpenIndex((prev) => (prev === idx ? null : idx));
+    const handleTabClick = (idx) => {
+        setActiveTabIndex(idx);
+
+        // Small delay ensures the layout has updated relative to the new active tab
+        setTimeout(() => {
+            if (tabRefs.current[idx] && window.innerWidth <= 767) {
+                const element = tabRefs.current[idx];
+                const offset = 70;
+                const top = element.getBoundingClientRect().top + window.scrollY - offset;
+
+                window.scrollTo({
+                    top,
+                    behavior: "smooth",
+                });
+            }
+        }, 10);
     };
 
+    const toggleItem = (tabIdx, itemIdx) => {
+        setOpenedItems((prev) => ({
+            ...prev,
+            [tabIdx]: prev[tabIdx] === itemIdx ? null : itemIdx,
+        }));
+    };
+
+    const renderFaqList = (list, tabIdx) => (
+        <div className="faq-tab-content d-flex flex-column gap-3">
+            {list.map((it, idx) => (
+                <FAQItem
+                    key={it.id || it.question || idx}
+                    question={it.question}
+                    answer={it.answer}
+                    isOpen={openedItems[tabIdx] === idx}
+                    onToggle={() => toggleItem(tabIdx, idx)}
+                />
+            ))}
+        </div>
+    );
+
     return (
-        <section className={`faq-sec ${className}`}>
+        <section className={`faq-sec bg-off ${className}`}>
             <div className="container">
-                <div className="row mb-5 pb-2">
-                    <div className="col-12">
-                        <h2 className="main-h2 text-center mb-3">{heading}</h2>
-                        <a href="#" className="btn text-primary gap-2 mx-auto">Still have questions? <img src={BtnArr} alt="" /></a>
-                    </div>
-                </div>
-                <div className="row justify-content-center row-gap-50">
-                    {tabbed ? (
-                        <div className="col-lg-4 col-md-5 pe-lg-5">
-                            <div className="faq-tab-list d-flex flex-column gap-3">
-                                {safeTabs.map((t, idx) => (
-                                    <button
-                                        key={t.key ?? t.title ?? idx}
-                                        type="button"
-                                        className={`btn d-flex align-items-center fs-18 w-100 no-hover justify-content-between ${idx === safeActiveTabIndex ? "active" : ""}`}
-                                        onClick={() => setActiveTabIndex(Math.min(Math.max(idx, 0), Math.max(safeTabs.length - 1, 0)))}
-                                    >
-                                        {t.title} <img src={idx === safeActiveTabIndex ? FaqActiveArr : FaqArr} alt="" />
-                                    </button>
-                                ))}
-                            </div>
+                {tabbed && (
+                    <div className="row mb-md-5 mb-4 pb-md-3">
+                        <div className="col-12 text-lg-center">
+                            <h2 className="main-h2 mb-4">{heading}</h2>
+                            <a href="#" className="faq-cta btn text-accent p-0 gap-2 mx-lg-auto">
+                                Still have questions? <img src={BtnArr} alt="" />
+                            </a>
                         </div>
-                    ) : null}
+                    </div>
+                )}
 
-                    <div className={`col-lg-8 ${tabbed ? "col-md-7" : ""}`}>
-                        {tabbed ? (
-                            <div className="faq-panels">
-                                {safeTabs.map((t, tabIdx) => {
-                                    const panelItems = itemsByTabKey.get(t.key) ?? [];
-                                    const panelOpenIndex = openIndexByTab[tabIdx] ?? null;
-                                    const isActive = tabIdx === safeActiveTabIndex;
-
+                <div className="row g-lg-5 justify-content-between row-gap-40">
+                    <div className="col-md-4 pe-lg-5">
+                        {!tabbed ? (
+                            <>
+                                <h2 className="main-h2 mb-4">{heading}</h2>
+                                <a href="#" className="faq-cta btn text-accent p-0 gap-2 mb-lg-5 mb-md-4 mb-2">
+                                    Still have questions? <img src={BtnArr} alt="" />
+                                </a>
+                            </>
+                        ) : (
+                            <div className="faq-tab-list d-flex flex-column gap-lg-2">
+                                {safeTabs.map((t, idx) => {
+                                    const isActive = idx === activeTabIndex;
                                     return (
                                         <div
-                                            key={t.key ?? t.title ?? tabIdx}
-                                            className={`faq-panel ${isActive ? "active" : ""}`}
+                                            key={t.key || idx}
+                                            className="faq-tab-group"
+                                            ref={(el) => { if (el) tabRefs.current[idx] = el; }}
                                         >
-                                            <div className="faq-tab-content d-flex flex-column gap-3">
-                                                {panelItems.map((it, idx) => {
-                                                    const isOpen = panelOpenIndex === idx;
-
-                                                    return (
-                                                        <div key={it.id ?? it.question ?? idx} className={`faq-item ${isOpen ? "open" : ""}`}>
-                                                            <button
-                                                                type="button"
-                                                                className="faq-head btn no-hover d-flex align-items-center fs-18 fw-medium justify-content-between w-100"
-                                                                onClick={() => {
-                                                                    if (!isActive) setActiveTabIndex(tabIdx);
-                                                                    if (tabbed) {
-                                                                        setOpenIndexByTab((prev) => ({
-                                                                            ...prev,
-                                                                            [tabIdx]: prev[tabIdx] === idx ? null : idx,
-                                                                        }));
-                                                                    }
-                                                                }}
-                                                            >
-                                                                <span>{it.question}</span>
-                                                                <img className="faq-chevron" src={FaqChevron} alt="" />
-                                                            </button>
-                                                            <div className="faq-content fs-16">
-                                                                <p>{it.answer}</p>
-                                                            </div>
-                                                        </div>
-                                                    );
-                                                })}
-                                            </div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        ) : (
-                            <div className="faq-tab-content d-flex flex-column gap-3">
-                                {safeItems.map((it, idx) => {
-                                    const isOpen = activeOpenIndex === idx;
-                                    return (
-                                        <div key={it.id ?? it.question ?? idx} className={`faq-item ${isOpen ? "open" : ""}`}>
                                             <button
                                                 type="button"
-                                                className="faq-head btn no-hover d-flex align-items-center fs-18 fw-medium justify-content-between w-100"
-                                                onClick={() => toggleOpen(idx)}
+                                                className={`btn d-flex align-items-center fs-18 w-100 no-hover justify-content-between ${isActive ? "active" : ""}`}
+                                                onClick={() => handleTabClick(idx)}
                                             >
-                                                <span>{it.question}</span>
-                                                <img className="faq-chevron" src={FaqChevron} alt="" />
+                                                {t.title}
+                                                <img src={isActive ? FaqActiveArr : FaqArr} alt="" />
                                             </button>
-                                            <div className="faq-content fs-16">
-                                                <p>{it.answer}</p>
+                                            <div className={`d-md-none faq-panel-mobile pt-2 pb-3 ${isActive ? "" : "d-none"}`}>
+                                                {renderFaqList(itemsByTabKey.get(t.key) || [], idx)}
                                             </div>
                                         </div>
                                     );
@@ -147,10 +140,30 @@ const FAQ = ({
                             </div>
                         )}
                     </div>
+
+                    <div className={`col-md-8 ${tabbed ? "d-none d-md-block" : ""}`}>
+                        {tabbed ? (
+                            <div className="faq-panels">
+                                {safeTabs.map((t, idx) => (
+                                    <div
+                                        key={t.key || idx}
+                                        className={`faq-panel ${idx === activeTabIndex ? "active" : ""}`}
+                                    >
+                                        {renderFaqList(itemsByTabKey.get(t.key) || [], idx)}
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            renderFaqList(safeItems, 0)
+                        )}
+                    </div>
                 </div>
             </div>
         </section>
     );
 };
+
+
+
 
 export default FAQ;

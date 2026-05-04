@@ -1,10 +1,18 @@
 footer {
-    background-color: #141416;
     padding-top: 70px;
+    border-top: 1px solid #E3E3E3;
 }
+
 footer h5 {
-    color: #C1BFFF;
+    color: var(--color-secondary);
 }
-.copyright {
-    color: #8B94A3;
+
+.foo-copyright {
+    background-color: #141416 !important;
+}
+
+@media (max-width: 767px) {
+    .copyright {
+        font-size: 12px !important;
+    }
 }

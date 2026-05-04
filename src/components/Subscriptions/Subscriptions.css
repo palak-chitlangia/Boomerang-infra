@@ -4,13 +4,13 @@
 
 .subscription-tabs-header {
     padding: 6px;
-    border-radius: 16px;
+    border-radius: 6px;
     background-color: #e2e8f080;
     backdrop-filter: blur(6px);
 }
 
 .subscription-tabs-header button {
-    border-radius: 12px;
+    border-radius: 6px;
     padding: 15px 28px;
     font-size: 14px;
     color: #0F172A;
@@ -49,7 +49,6 @@
 .subs-tag {
     text-transform: uppercase;
     background-color: #5a5dff1a;
-    color: var(--color-accent);
     padding: 5px 12px;
     border-radius: 20px;
     letter-spacing: 1.2px;

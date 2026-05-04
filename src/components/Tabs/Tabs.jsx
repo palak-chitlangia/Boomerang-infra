@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import "./Tabs.css"
 import BtnArr from "../../assets/images/btn-arr-wh.svg";
-import ArrBl from "../../assets/images/arr-bl.svg";
+import ArrBl from "../../assets/images/btn-arr-bl.svg";
 
 const IncludesIconFile = ({ accentColor }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">

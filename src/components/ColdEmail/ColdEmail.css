@@ -1,5 +1,5 @@
 .cold-email-sec {
-    padding-bottom: 100px;
+    padding-block: 120px;
 }
 
 .cold-mail-grid {
@@ -26,6 +26,10 @@
 }
 
 @media (max-width:992px) {
+    .cold-email-sec {
+        padding-block: 90px;
+    }
+
     .cold-mail-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -33,8 +37,9 @@
 
 @media (max-width:767px) {
     .cold-email-sec {
-    padding-bottom: 70px;
-}
+        padding-block: 70px;
+    }
+
     .cold-mail-grid {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -45,7 +50,7 @@
 
     .cold-mail-item {
         border: 1px solid #ffffff80;
-        background: rgba(255, 255, 255, 0.40);
+        background: #ffffff66;
         box-shadow: 0 0 0 1px #8b5cf633;
     }
 }

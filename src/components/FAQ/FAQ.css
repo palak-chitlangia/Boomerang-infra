@@ -1,14 +1,19 @@
 .faq-sec {
-    padding-block: 90px;
+    padding-block: 120px;
 }
 
 .faq-tab-list button {
     color: #64748B;
-    padding: 16px;
+    padding-block: 16px;
+    text-align: left;
 }
 
 .faq-tab-list button.active {
     color: var(--color-black);
+}
+
+.faq-tab-list button.active img {
+    transition: all 0.3s ease;
 }
 
 .faq-panels {
@@ -34,19 +39,27 @@
 }
 
 .faq-item {
-    border-radius: 16px;
-    background: #FAF5FF;
-    border: 1px solid #FAF5FF;
+    border-radius: 12px;
+    background: var(--color-white);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
 }
 
 .faq-item.open {
     background-color: #fff;
-    border: 1px solid #eeeeee;
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
 }
 
 .faq-head {
-    padding: 25px;
+    padding: 22px 25px;
     text-align: left;
+    font-weight: 600 !important;
+}
+
+.faq-cta {
+    font-weight: 700;
+    font-size: 18px;
 }
 
 .faq-content {
@@ -58,15 +71,31 @@
 
 .faq-item.open .faq-content {
     max-height: 500px;
-    padding: 0px 25px 25px;
+    padding: 0px 25px 15px;
 }
 
 .faq-chevron {
-    transition: transform 0.25s ease;
+    transition: transform 0.3s ease;
 }
 
 .faq-item.open .faq-chevron {
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
+}
+
+@media (max-width: 991px) {
+    .faq-sec {
+        padding-block: 90px;
+    }
+
+    .faq-tab-list button {
+        font-size: 15px;
+    }
+
+    .faq-head {
+        padding: 18px 20px;
+        font-size: 15px;
+        line-height: 1.3em;
+    }
 }
 
 @media (max-width: 767px) {
@@ -74,13 +103,19 @@
         padding-block: 70px;
     }
 
-    .faq-tab-list {
-        background-color: var(--color-white);
-        padding: 10px;
-        border-radius: 10px;
+    .faq-cta {
+        font-size: 16px;
     }
 
-    .faq-tab-list img {
-        transform: rotate(45deg);
+    .faq-tab-group button.active img:not(.faq-chevron) {
+        transform: rotate(90deg);
+    }
+
+    .faq-head {
+        padding: 18px 20px;
+    }
+
+    .faq-item.open .faq-content {
+        padding: 0px 20px;
     }
 }

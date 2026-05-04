@@ -1,5 +1,13 @@
 .infra-banner {
     padding-top: 90px;
+    background-image: url(../../assets/images/infra-ban-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.infra-banner.border-bottom {
+    border-bottom: 10px solid #5450FF !important;
 }
 
 .infra-bg-left {
@@ -15,6 +23,7 @@
     width: 50%;
     pointer-events: none;
 }
+
 .infra-ban-img {
     box-shadow: 1px 1px 8.3px #0000001a;
 }

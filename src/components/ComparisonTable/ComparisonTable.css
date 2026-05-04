@@ -1,20 +1,23 @@
+.comparison-table-sec {
+    padding-block: 120px;
+}
+
 .pack-comp-tab-header button {
     color: #475569;
     padding: 12px 24px;
-    border-radius: 50px;
     border: 1px solid #E2E8F0;
     transition: all 0.3s ease;
 }
 
 .pack-comp-tab-header button:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
 }
 
 .pack-comp-tab-header button.active {
-    background-color: var(--color-accent);
+    background-color: var(--color-primary);
     color: #fff;
-    border-color: var(--color-accent);
+    border-color: var(--color-primary);
 }
 
 .pack-comp-content {
@@ -76,7 +79,7 @@
 
 .boom-cell {
     background-color: #c7d2fe33;
-    color: #5850EC;
+    color: var(--color-primary);
     border-inline: 1px solid #E5E7EB;
 }
 
@@ -92,7 +95,7 @@
 }
 
 .boom-cell .comp-progress {
-    background-color: #5850EC;
+    background-color: var(--color-primary);
 }
 
 @media (max-width:991px) {

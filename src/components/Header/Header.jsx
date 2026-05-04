@@ -6,7 +6,7 @@ import HamIcon from "../../assets/images/ham-icon.svg";
 
 import { useEffect, useState } from "react";
 
-const Header = ({ TopBar = true }) => {
+const Header = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const closeSidebar = () => setIsSidebarOpen(false);
@@ -32,13 +32,6 @@ const Header = ({ TopBar = true }) => {
 
     return (
         <>
-            {TopBar && (
-                <div className="bg-primary text-white text-center py-2">
-                    <div className="container">
-                        <p className="fs-16 mb-0 fw-light">Now offering Google Admin Mailboxes ranging $1.8 - 2.25 per inbox. Check it out →</p>
-                    </div>
-                </div>
-            )}
             <header className="py-4">
                 <div className="container">
                     <div className="row align-items-center">
@@ -49,7 +42,7 @@ const Header = ({ TopBar = true }) => {
                             <nav className="navbar navbar-expand d-lg-block d-none navbar-light justify-content-end py-0 gap-20">
                                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul className="navbar-nav m-auto d-lg-flex gap-lg-3 fs-16">
-                                        <li className="nav-item active">
+                                        <li className="nav-item">
                                             <a className="nav-link" href="https://docs.google.com/spreadsheets/d/1hw98_23BLlLKrGmeA6NnUaVdUilQ2NKIuihA3suiyjM/edit?gid=0#gid=0" target="_blank">Pricing</a>
                                         </li>
                                         <li className="nav-item">
@@ -63,9 +56,8 @@ const Header = ({ TopBar = true }) => {
                             </nav>
                         </div>
                         <div className="col-xl-6 col-5 d-flex align-items-center justify-content-end gap-15">
-                            <a href="https://app.theboomerang.co/login?menu=Login&login_choice=Email-Login" className="btn text-primary no-hover d-lg-block d-none" target="_blank">Log In</a>
-                            <a href="https://calendly.com/theboomerang/15-min-discovery-call" className="btn btn-secondary px-4 d-xl-block d-none" target="_blank">Book a Demo</a>
-                            <a href="https://app.theboomerang.co/login?menu=Signup" className="btn btn-primary gap-2 px-4 d-lg-block d-none" target="_blank">Get 100 Free Leads <img src={BtnArr} /></a>
+                            <a href="https://app.theboomerang.co/login?menu=Login&login_choice=Email-Login" className="btn no-hover d-lg-flex d-none" target="_blank">Log In</a>
+                            <a href="https://app.theboomerang.co/login?menu=Signup" className="btn btn-primary gap-2 px-3 d-lg-flex d-none" target="_blank">Get 100 Free Leads <img src={BtnArr} /></a>
                             <button
                                 className="btn no-hover sidebar-toggler d-lg-none d-block"
                                 type="button"
@@ -78,43 +70,42 @@ const Header = ({ TopBar = true }) => {
                         </div>
                     </div>
                 </div>
-            </header>
-            <div
-                className={`sidebar position-fixed d-flex justify-content-start${isSidebarOpen ? " open" : ""}`}
-                aria-hidden={!isSidebarOpen}
-            >
-                <div className="sidebar-backdrop position-absolute w-100 h-100" onClick={closeSidebar}></div>
-                <div className="sidebar-content bg-white d-flex flex-column gap-50 position-relative w-100 h-100">
-                    <div className="sidebar-header">
-                        <div className="d-flex align-items-center justify-content-between">
-                            <div className="logo">
-                                <a href="https://www.theboomerang.co/"><img src={Logo} alt="Logo" /></a>
+                <div
+                    className={`sidebar position-fixed d-flex justify-content-start${isSidebarOpen ? " open" : ""}`}
+                    aria-hidden={!isSidebarOpen}
+                >
+                    <div className="sidebar-backdrop position-absolute w-100 h-100" onClick={closeSidebar}></div>
+                    <div className="sidebar-content bg-white d-flex flex-column gap-50 position-relative w-100 h-100">
+                        <div className="sidebar-header">
+                            <div className="d-flex align-items-center justify-content-between">
+                                <div className="logo">
+                                    <a href="https://www.theboomerang.co/"><img src={Logo} alt="Logo" /></a>
+                                </div>
+                                <button type="button" className="btn no-hover sidebar-close" aria-label="Close menu" onClick={closeSidebar}>
+                                    ×
+                                </button>
                             </div>
-                            <button type="button" className="btn no-hover sidebar-close" aria-label="Close menu" onClick={closeSidebar}>
-                                ×
-                            </button>
+                        </div>
+                        <div className="sidebar-body">
+                            <ul className="navbar-nav m-auto d-flex flex-column gap-10 fs-16">
+                                <li className="nav-item">
+                                    <a className="nav-link" href="https://docs.google.com/spreadsheets/d/1hw98_23BLlLKrGmeA6NnUaVdUilQ2NKIuihA3suiyjM/edit?gid=0#gid=0" target="_blank">Pricing</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="https://www.theboomerang.co/affiliate" onClick={closeSidebar}>Affiliate</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="https://love.theboomerang.co/ " onClick={closeSidebar}>Testimonials</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="sidebar-footer d-flex flex-column gap-10">
+                            <a href="https://app.theboomerang.co/login?menu=Login&login_choice=Email-Login" className="btn no-hover mb-2" onClick={closeSidebar} target="_blank">Log In</a>
+                            <a href="https://app.theboomerang.co/login?menu=Signup" className="btn btn-primary gap-2 px-4" onClick={closeSidebar} target="_blank">Get 100 Free Leads <img src={BtnArr} /></a>
                         </div>
                     </div>
-                    <div className="sidebar-body">
-                        <ul className="navbar-nav m-auto d-flex flex-column gap-10 fs-16">
-                            <li className="nav-item active">
-                                <a className="nav-link" href="https://docs.google.com/spreadsheets/d/1hw98_23BLlLKrGmeA6NnUaVdUilQ2NKIuihA3suiyjM/edit?gid=0#gid=0" target="_blank">Pricing</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="https://www.theboomerang.co/affiliate" onClick={closeSidebar}>Affiliate</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="https://love.theboomerang.co/ " onClick={closeSidebar}>Testimonials</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="sidebar-footer d-flex flex-column gap-20">
-                        <a href="https://app.theboomerang.co/login?menu=Login&login_choice=Email-Login" className="btn text-primary no-hover" onClick={closeSidebar} target="_blank">Log In</a>
-                        <a href="https://calendly.com/theboomerang/15-min-discovery-call" className="btn btn-secondary px-4" onClick={closeSidebar} target="_blank">Book a Demo</a>
-                        <a href="https://app.theboomerang.co/login?menu=Signup" className="btn btn-primary gap-2 px-4" onClick={closeSidebar} target="_blank">Get 100 Free Leads <img src={BtnArr} /></a>
-                    </div>
                 </div>
-            </div>
+            </header>
         </>
     );
 };

@@ -7,16 +7,17 @@ import EngageIcon from "../../assets/images/engage-icon.svg";
 import ControlIcon from "../../assets/images/control-icon.svg";
 import TeamIcon from "../../assets/images/team-icon.svg";
 import RobotIcon from "../../assets/images/robot-icon.svg";
+import BtnArr from "../../assets/images/btn-arr-wh.svg";
 
 const ColdEmail = () => {
     return (
-        <section className="cold-email-sec pt-5 mt-lg-5 mt-md-4 mt-3">
+        <section className="cold-email-sec">
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <h2 className="main-h2 text-md-center mb-2 col-xl-12 col-lg-8 col-md-9 mx-auto">Cold Email Infrastructure That Works At Scale</h2>
+                        <h2 className="main-h2 text-md-center mb-3 mx-auto">Cold Email Infrastructure That Works At Scale</h2>
                         <p className="text-md-center text-muted col-xl-7 col-lg-8 col-md-10 mx-auto mb-md-5 mb-4 pb-md-0 pb-2">Scale your outreach with confidence using infrastructure built for volume and reliable deliverability.</p>
-                        <div className="cold-mail-grid d-grid gap-30 mb-5 pb-lg-4">
+                        <div className="cold-mail-grid d-grid gap-30 mb-5">
                             <div className="cold-mail-item">
                                 <img src={InboxIcon} alt="" className="mb-4" />
                                 <h4 className="mb-3">High Inbox Placement</h4>
@@ -58,7 +59,7 @@ const ColdEmail = () => {
                                 <p className="fs-14 text-muted mb-0">Setup, DNS, and warmups we handle it all so you can focus on writing emails.</p>
                             </div>
                         </div>
-                        <a href="https://app.theboomerang.co/login?menu=Signup" className="btn btn-primary mx-auto py-3" target="_blank">Ready to boost your deliverability? Get started today</a>
+                        <a href="https://app.theboomerang.co/login?menu=Signup" className="btn btn-primary mx-auto gap-2" target="_blank">Ready to boost your deliverability? Get started today <img src={BtnArr} alt="" /></a>
                     </div>
                 </div>
             </div>

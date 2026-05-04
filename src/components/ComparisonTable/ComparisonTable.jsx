@@ -236,16 +236,16 @@ const ComparisonTable = () => {
 
 
     return (
-        <section className="comparison-table-sec py-5">
+        <section className="comparison-table-sec">
             <div className="container">
-                <div className="row justify-content-center mb-5">
+                <div className="row justify-content-center">
                     <div className="col-xxl-6 col-xl-7 col-lg-8 col-md-10 text-center px-md-4 mb-4">
-                        <h2 className="main-h2">Why we lead the pack</h2>
+                        <h2 className="main-h2 mb-3">Why we lead the pack</h2>
                         <p className="fs-18 text-muted">As the official <span className="fw-bold text-primary">Google Reseller</span> in the cold email infrastructure space, we provide unparalleled deliverability and scale.</p>
                     </div>
                     <div className="col-12">
                         <div className="pack-comp-tabs">
-                            <div className="pack-comp-tab-header d-flex justify-content-center gap-10 mb-5 flex-wrap" role="tablist" aria-label="Comparison table tabs">
+                            <div className="pack-comp-tab-header d-flex justify-content-center gap-10 mb-5 pb-lg-3 flex-wrap" role="tablist" aria-label="Comparison table tabs">
                                 {tabs.map((tab) => (
                                     <button
                                         key={tab.key}

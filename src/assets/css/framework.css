@@ -3,10 +3,14 @@
 :root {
     --primary-font: "Poppins", sans-serif;
     --secondary-font: "Poppins", sans-serif;
-    --color-black: #000000;
+    --color-black: #302B3A;
     --color-white: #ffffff;
-    --color-primary: #581ADF;
-    --color-accent: #5550FF;
+    --color-primary: #5550FF;
+    --color-secondary: #0f172a;
+    --color-accent: #FF8500;
+    --color-muted: #616161;
+    --color-dull: #CBD5E1;
+    --color-off: #F4F6FF;
 }
 
 body {
@@ -71,34 +75,37 @@ img {
     }
 }
 
-.bg-off {
-    background-color: #F8F8FF;
+.bg-primary {
+    background-color: var(--color-primary) !important;
+}
+
+.bg-secondary {
+    background-color: var(--color-secondary) !important;
 }
 
 .bg-accent {
     background-color: var(--color-accent) !important;
 }
 
-.bg-primary {
-    background-color: var(--color-primary) !important;
+.bg-off {
+    background-color: var(--color-off) !important;
 }
 
 /* Base Typography */
 .main-h1 {
-    font-size: 62px;
-    font-weight: 600;
-    line-height: 1.1em;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2em;
 }
 
 .main-h1 span {
-    color: var(--color-primary);
-    font-weight: 800;
+    font-weight: 400;
 }
 
 .main-h2 {
-    font-size: 42px;
-    font-weight: 600;
-    line-height: normal;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2em;
 }
 
 .main-h2 span {
@@ -106,19 +113,18 @@ img {
 }
 
 .sub-head {
-    font-size: 12px;
+    font-size: 20px;
     line-height: 1.5em;
     margin: 0px;
-    font-weight: 500;
-    color: var(--color-primary);
+    font-weight: 700;
+    color: var(--color-accent);
     width: max-content;
-    letter-spacing: 2.4px;
     text-transform: uppercase;
 }
 
 @media (max-width: 1199px) {
     .main-h1 {
-        font-size: 42px;
+        font-size: 50px;
     }
 }
 
@@ -130,15 +136,23 @@ img {
     .main-h2 {
         font-size: 36px;
     }
+
+    .sub-head {
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 767px) {
     .main-h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
 
     .main-h2 {
         font-size: 28px;
+    }
+
+    .sub-head {
+        font-size: 16px;
     }
 }
 
@@ -155,7 +169,7 @@ img {
 @media (min-width: 768px) {
     .fs-16 {
         font-size: 16px !important;
-        line-height: 1.7em !important;
+        line-height: 1.625em !important;
     }
 }
 
@@ -165,9 +179,13 @@ img {
         line-height: 1.45em !important;
     }
 }
-
+    
 .text-primary {
     color: var(--color-primary) !important;
+}
+
+.text-secondary {
+    color: var(--color-secondary) !important;
 }
 
 .text-accent {
@@ -175,13 +193,17 @@ img {
 }
 
 .text-muted {
-    color: #525252 !important;
+    color: var(--color-muted) !important;
+}
+
+.text-dull {
+    color: var(--color-dull) !important;
 }
 
 /* Buttons */
 .btn {
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 6px;
     font-weight: 500;
     transition: transform 1.5s ease;
     padding: 0px;
@@ -221,17 +243,17 @@ img {
 
 .btn-secondary {
     padding: 12px 30px;
-    color: var(--color-primary) !important;
-    border: 1px solid var(--color-primary) !important;
-    background-color: #fff0 !important;
+    color: var(--color-white) !important;
+    border: 1px solid var(--color-black) !important;
+    background-color: var(--color-black) !important;
     font-weight: 600;
 }
 
-.btn-tertiary {
+.btn-accent {
     padding: 12px 30px;
-    color: var(--color-primary) !important;
-    border: 1px solid #fff !important;
-    background-color: #fff !important;
+    color: var(--color-white) !important;
+    border: 1px solid var(--color-accent) !important;
+    background-color: var(--color-accent) !important;
     font-weight: 600;
 }
 

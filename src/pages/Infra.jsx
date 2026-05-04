@@ -40,7 +40,7 @@ const Infra = () => {
                 TopBar={false}
             />
             <InfraBanner />
-            <FeaturesStrip />
+            <TrustedBy />
             <ColdEmail />
             <OutboundEmail />
             <ComparisonTable />

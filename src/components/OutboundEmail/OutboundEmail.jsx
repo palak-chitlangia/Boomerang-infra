@@ -1,5 +1,5 @@
 import "./OutboundEmail.css";
-import InfraHealthIcon from "../../assets/images/infra-health.svg";
+import InfraHealth from "../../assets/images/infra-health.gif";
 import MeterIcon from "../../assets/images/meter-icon.svg";
 import DedicateIcon from "../../assets/images/dedicate-icon.svg";
 import DnsIcon from "../../assets/images/dns-icon.svg";
@@ -23,10 +23,10 @@ const OutboundEmail = () => {
                     <div className="col-lg-6 pe-lg-5">
                         <h3 className="mb-3">Scale your outreach without limits</h3>
                         <p className="fs-14 text-muted mb-4">Our 'Feature Overview Dashboard' provides all the tools you need to maintain a healthy email infrastructure. Buy mailboxes in bulk, isolate reputation per domain, and let our automated systems handle the technical DNS heavy lifting.</p>
-                        <a href="https://app.theboomerang.co/login?menu=Signup" className="btn btn-primary py-3" target="_blank">Get started now</a>
+                        <a href="https://app.theboomerang.co/login?menu=Signup" className="btn btn-secondary" target="_blank">Get started now</a>
                     </div>
                     <div className="col-lg-6">
-                        <img src={InfraHealthIcon} alt="" className="w-100" />
+                        <img src={InfraHealth} alt="" className="w-100 rounded-4" />
                     </div>
                 </div>
                 <div className="row row-gap-30">
