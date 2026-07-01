@@ -23,7 +23,7 @@ const Footer = () => {
                         <h5 className="mb-3 fs-16 fw-medium">Contact Us</h5>
                         <a href="#" className="d-flex align-items-start gap-2 fs-12 fw-bold mb-3">
                             <img src={PinIcon} alt="" />
-                            <p className="mb-0">47 W 13th St, New York, NY 10011, USA</p>
+                            <p className="mb-0">2nd floor, HDFC bank, near Vinayak cars, Jaipur</p>
                         </a>
                         <a href="tel:+16206302762" className="d-flex align-items-center gap-2 fs-12 fw-bold mb-3">
                             <img src={CallIcon} alt="" />
@@ -47,8 +47,12 @@ const Footer = () => {
             <div className="foo-copyright text-muted py-3">
                 <div className="container copyright fs-14">
                     <div className="row align-items-center row-gap-15">
-                        <div className="col-lg-8 text-lg-start text-center">© 2026 All Rights Reserved Boomerang powered by CHITLANGIA INFOTECH PRIVATE LIMITED.</div>
+                        {/* <div className="col-lg-8 text-lg-start text-center">© 2026 All Rights Reserved Boomerang powered by CHITLANGIA INFOTECH PRIVATE LIMITED.</div>
                         <div className="col-lg-4 d-flex justify-content-lg-end justify-content-center gap-30">
+                            <a href="https://www.theboomerang.co/privacy-policy" rel="nofollow">Privacy policy</a>
+                            <a href="https://www.theboomerang.co/terms-and-conditions" rel="nofollow">Terms and conditions</a>
+                        </div> */}
+                        <div className="col-12 d-flex justify-content-center gap-30">
                             <a href="https://www.theboomerang.co/privacy-policy" rel="nofollow">Privacy policy</a>
                             <a href="https://www.theboomerang.co/terms-and-conditions" rel="nofollow">Terms and conditions</a>
                         </div>
