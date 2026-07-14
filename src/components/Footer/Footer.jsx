@@ -27,7 +27,7 @@ const Footer = () => {
                         </a>
                         <a href="tel:+16206302762" className="d-flex align-items-center gap-2 fs-12 fw-bold mb-3">
                             <img src={CallIcon} alt="" />
-                            <p className="mb-0">+1 620-630-2762</p>
+                            <p className="mb-0">+91 89553 06465</p>
                         </a>
                         <a href="mailto:friends@theboomerang.co" className="d-flex align-items-center gap-2 fs-12 fw-bold mb-3">
                             <img src={MailIcon} alt="" />
