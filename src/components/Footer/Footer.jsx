@@ -25,7 +25,7 @@ const Footer = () => {
                             <img src={PinIcon} alt="" />
                             <p className="mb-0">2nd floor, HDFC bank, near Vinayak cars, Jaipur</p>
                         </a>
-                        <a href="tel:+16206302762" className="d-flex align-items-center gap-2 fs-12 fw-bold mb-3">
+                        <a href="tel:+918955306465" className="d-flex align-items-center gap-2 fs-12 fw-bold mb-3">
                             <img src={CallIcon} alt="" />
                             <p className="mb-0">+91 89553 06465</p>
                         </a>
