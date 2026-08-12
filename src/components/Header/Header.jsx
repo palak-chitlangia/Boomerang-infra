@@ -43,10 +43,10 @@ const Header = () => {
                                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul className="navbar-nav m-auto d-lg-flex gap-lg-3 fs-16">
                                         <li className="nav-item">
-                                            <a className="nav-link" href="https://docs.google.com/spreadsheets/d/1hw98_23BLlLKrGmeA6NnUaVdUilQ2NKIuihA3suiyjM/edit?gid=0#gid=0" target="_blank">Pricing</a>
+                                            <a className="nav-link" href="https://www.theboomerang.co/#pricing">Pricing</a>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="nav-link" href="https://www.theboomerang.co/affiliate" onClick={closeSidebar}>Affiliate</a>
+                                            <a className="nav-link" href="https://www.theboomerang.co/affiliate">Affiliate</a>
                                         </li>
                                         <li className="nav-item">
                                             <a className="nav-link" href="https://love.theboomerang.co/ ">Testimonials</a>
