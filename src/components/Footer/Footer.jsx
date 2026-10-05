@@ -23,7 +23,7 @@ const Footer = () => {
                         <h5 className="mb-3 fs-16 fw-medium">Contact Us</h5>
                         <a href="#" className="d-flex align-items-start gap-2 fs-12 fw-bold mb-3">
                             <img src={PinIcon} alt="" />
-                            <p className="mb-0">2nd floor, HDFC bank, near Vinayak cars, Jaipur</p>
+                            <p className="mb-0">131 Continental Dr Suite 305 Newark, DE, 19713 US</p>
                         </a>
                         <a href="tel:+918955306465" className="d-flex align-items-center gap-2 fs-12 fw-bold mb-3">
                             <img src={CallIcon} alt="" />
